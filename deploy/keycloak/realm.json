@@ -1,0 +1,31 @@
+{
+  "realm": "keyring",
+  "enabled": true,
+  "displayName": "Keyring local identity broker",
+  "registrationAllowed": false,
+  "loginWithEmailAllowed": true,
+  "clients": [
+    {
+      "clientId": "keyring-web",
+      "name": "Keyring Web",
+      "enabled": true,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "local-dev-secret",
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": false,
+      "redirectUris": ["http://localhost:3000/api/auth/callback/enterprise-sso"],
+      "webOrigins": ["http://localhost:3000"],
+      "protocol": "openid-connect",
+      "defaultClientScopes": ["web-origins", "acr", "roles", "profile", "email", "groups"]
+    }
+  ],
+  "groups": [
+    { "name": "keyring-owners" },
+    { "name": "keyring-admins" },
+    { "name": "pmo-leads" },
+    { "name": "project-managers" },
+    { "name": "keyring-contributors" },
+    { "name": "keyring-viewers" },
+    { "name": "internal-audit" }
+  ]
+}
